@@ -73,6 +73,14 @@
     ```
 
 
+* 从Docker Hub拉取镜像运行
+
+  ```shell
+  docker pull axaxin/openpandora
+  docker run -it --rm axaxin/openpandora
+  ```
+
+
 * Docker编译运行
 
   ```shell

@@ -19,7 +19,7 @@ The modification in this version allows Pandora to no longer be bundled with fak
 
 OpenPandora会依然使用 https://ai.fakeopen.com 作为默认后端反代，使用fakeopen你不需要配置梯子，但你的所有数据都会通过fakeopen转发；
 
-OpenPandora可以切换使用开源的go-chatgpt-api，建立go-chatgpt-api服务之后，设置OpenPandora的环境参数 CHATGPT_API_PREFIX=http://[ip]:[port]/chatgpt 即可。
+OpenPandora可以切换使用开源的go-chatgpt-api，建立go-chatgpt-api服务之后，设置OpenPandora的环境参数 CHATGPT_API_PREFIX=http://[go-chatgpt-api服务的ip]:[port]/chatgpt 即可。
 
 go-chatgpt-api地址：https://github.com/linweiyuan/go-chatgpt-api/tree/main
 
@@ -56,8 +56,13 @@ services:
 
 ### API调用方式
 
+自建go-chatgpt-api后端反代服务：
+
 设置环境变量OPENAI_API_PREFIX=http://[go-chatgpt-api的ip]:[port]/platform
 
+使用默认fakeopen：
+
+不需要做任何更改。
 
 
 
