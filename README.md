@@ -12,4 +12,4 @@ You can customized revers-proxy backend with this version.
 
 ## Star历史
 
-![Star History Chart](https://api.star-history.com/svg?repos=Axaxin/openpandora&type=Date)
+![Star History Chart](https://api.star-history.com/svg?repos=axaxin/openpandora&type=Date)
