@@ -72,22 +72,15 @@
     pandora-cloud
     ```
 
-* Docker Hub运行
-
-  ```shell
-  docker pull pengzhile/pandora
-  docker run -it --rm pengzhile/pandora
-  ```
 
 * Docker编译运行
 
   ```shell
-  docker build -t pandora .
-  docker run -it --rm pandora
+  docker build -t openpandora .
+  docker run -it --rm openpandora
   ```
 
 * 输入用户名密码登录即可，登录密码理论上不显示出来，莫慌。
-* 简单而粗暴，不失优雅。
 
 ## 程序参数
 
@@ -148,8 +141,8 @@
 ## 高阶设置
 
 * 本部分内容不理解的朋友，**请勿擅动！**
-* 环境变量 `OPENAI_API_PREFIX` 可以替换OpenAI Api的前缀`https://api.openai.com`。
-* 环境变量 `CHATGPT_API_PREFIX` 可以替换ChatGPT Api的前缀`https://ai.fakeopen.com`。
+* 环境变量 `OPENAI_API_PREFIX` 可以替换OpenAI Api的前缀,默认是`https://api.openai.com`。
+* 环境变量 `CHATGPT_API_PREFIX` 可以替换ChatGPT Api的前缀,默认使用`https://ai.fakeopen.com/api`。
 * 如果你想持久存储`Docker`中`Pandora`产生的数据，你可以挂载宿主机目录至`/data`。
 * 如果你在国内使用`pip`安装缓慢，可以考虑切换至腾讯的源：```pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple```
 * 镜像同步版本可能不及时，如果出现这种情况建议切换至官方源：```pip config set global.index-url https://pypi.org/simple```
