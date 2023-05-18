@@ -2,15 +2,23 @@
 
 一个可更换后端反代的潘多拉。
 
+这个版本的修改是让pandora不再捆绑使用fakeopen，可以更换为自己管理可控的反代服务器。
+
+做这样的修改意在数据不再经过第三方；
+
+官方api方式会消耗token（付费），而AccessToken方式则不消耗token且chatgpt的响应比api聪明一点。
+
+注：无论用哪种工具，最终都需要一个可以正常访问chatgpt官网的ip或者节点作为最终出口，这个出口可以是支持chatgpt的梯子或者租用一个干净的居家IP。
+
+
+
 You can use self-host reverse-proxy backend with this version. 
 
-注：无论用哪种工具，最终都需要一个可以正常访问chatgpt官网的ip或者节点作为最终出口，这个出口可以是支持chatgpt的梯子或者买一个干净的居家IP。
-
-这个版本的修改是让pandora不再捆绑使用fakeopen，可以更换为自己管理可控的反代服务器。
+The modification in this version allows Pandora to no longer be bundled with fakeopen, and it can be replaced with a reverse proxy server that you manage and control.
 
 Note: Regardless of the tool used, in the end, an IP or node that can normally access the ChatGPT official website is required as the final exit.
 
-The modification in this version allows Pandora to no longer be bundled with fakeopen, and it can be replaced with a reverse proxy server that you manage and control.
+
 
 
 
@@ -56,17 +64,16 @@ services:
 
 ### API调用方式
 
-自建go-chatgpt-api后端反代服务：
 
-设置环境变量OPENAI_API_PREFIX=http://[go-chatgpt-api的ip]:[port]/platform
+设置环境变量PANDORA_API=${api-key}
 
-使用默认fakeopen：
+自建go-chatgpt-api后端反代服务： 设置环境变量OPENAI_API_PREFIX=http://[go-chatgpt-api的ip]:[port]/platform
 
-不需要做任何更改。
+使用默认fakeopen：  不需要做任何更改。
+
 
 
 
 ## 体验地址
 * 访问 [这里](http://chat.openai.com/api/auth/session) 拿 `Access Token`
 * 也可以访问 [这里](http://ai.fakeopen.com/auth) 拿 `Access Token`
-* `Access Token` 有效期 `14` 天，期间访问**不需要梯子**。这意味着你在手机上也可随意使用。
